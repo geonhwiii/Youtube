@@ -10,6 +10,8 @@
 		BB248EB2222D3B0500FF05FA /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB248EB1222D3B0500FF05FA /* Extension.swift */; };
 		BB248EB5222D3C9C00FF05FA /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB248EB4222D3C9C00FF05FA /* VideoCell.swift */; };
 		BB248EB8222D3E2200FF05FA /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB248EB7222D3E2200FF05FA /* MenuBar.swift */; };
+		BB2CBD66222E7061007B2A73 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2CBD65222E7061007B2A73 /* Video.swift */; };
+		BB2CBD69222E90CE007B2A73 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2CBD68222E90CE007B2A73 /* ApiService.swift */; };
 		BBC40E8A222D07AA008B269B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC40E89222D07AA008B269B /* AppDelegate.swift */; };
 		BBC40E8C222D07AA008B269B /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC40E8B222D07AA008B269B /* HomeController.swift */; };
 		BBC40E8F222D07AA008B269B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBC40E8D222D07AA008B269B /* Main.storyboard */; };
@@ -21,6 +23,8 @@
 		BB248EB1222D3B0500FF05FA /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		BB248EB4222D3C9C00FF05FA /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		BB248EB7222D3E2200FF05FA /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
+		BB2CBD65222E7061007B2A73 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		BB2CBD68222E90CE007B2A73 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		BBC40E86222D07AA008B269B /* Youtube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Youtube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBC40E89222D07AA008B269B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBC40E8B222D07AA008B269B /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -66,6 +70,22 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		BB2CBD64222E7053007B2A73 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BB2CBD65222E7061007B2A73 /* Video.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BB2CBD67222E90B8007B2A73 /* ApiService */ = {
+			isa = PBXGroup;
+			children = (
+				BB2CBD68222E90CE007B2A73 /* ApiService.swift */,
+			);
+			path = ApiService;
+			sourceTree = "<group>";
+		};
 		BBC40E7D222D07AA008B269B = {
 			isa = PBXGroup;
 			children = (
@@ -85,8 +105,10 @@
 		BBC40E88222D07AA008B269B /* Youtube */ = {
 			isa = PBXGroup;
 			children = (
-				BB248EB6222D3CE200FF05FA /* Controller */,
+				BB2CBD67222E90B8007B2A73 /* ApiService */,
+				BB2CBD64222E7053007B2A73 /* Model */,
 				BB248EB3222D3C8A00FF05FA /* View */,
+				BB248EB6222D3CE200FF05FA /* Controller */,
 				BB248EB0222D3AEE00FF05FA /* Helpers */,
 				BBC40E89222D07AA008B269B /* AppDelegate.swift */,
 				BBC40E8D222D07AA008B269B /* Main.storyboard */,
@@ -169,9 +191,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB248EB2222D3B0500FF05FA /* Extension.swift in Sources */,
+				BB2CBD66222E7061007B2A73 /* Video.swift in Sources */,
 				BB248EB5222D3C9C00FF05FA /* VideoCell.swift in Sources */,
 				BBC40E8C222D07AA008B269B /* HomeController.swift in Sources */,
 				BBC40E8A222D07AA008B269B /* AppDelegate.swift in Sources */,
+				BB2CBD69222E90CE007B2A73 /* ApiService.swift in Sources */,
 				BB248EB8222D3E2200FF05FA /* MenuBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

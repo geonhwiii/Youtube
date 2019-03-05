@@ -8,23 +8,10 @@
 
 import UIKit
 
-class BaseCell: UICollectionViewCell {
-   override init(frame: CGRect) {
-      super.init(frame: frame)
-      setupViews()
-   }
-   
-   func setupViews() {
-      
-   }
-   
-   required init?(coder aDecoder: NSCoder) {
-      fatalError("init(coder:) has not been implemented")
-   }
-}
-
-
 class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+   
+   var horizontalBarLeftAnchorConstraints: NSLayoutConstraint?
+   
    
    
    lazy var collectionView: UICollectionView = {
@@ -37,7 +24,8 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
    }()
    
    let cellId = "cellId"
-   let imageNames = ["home", "heart", "camera", "simpson"]
+   let imageNames = ["home", "trending", "subscriptions", "account"]
+   var homeController: HomeController?
    
    override init(frame: CGRect) {
       super.init(frame: frame)
@@ -56,17 +44,32 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
       setupHorizontalBar()
       
    }
+   
+   // 컬렉션 뷰의 가로바를 생성
    func setupHorizontalBar() {
       let horizontalBarView = UIView()
       horizontalBarView.backgroundColor = UIColor(white: 0.9, alpha: 1.0)
       horizontalBarView.translatesAutoresizingMaskIntoConstraints = false
       addSubview(horizontalBarView)
       
-      horizontalBarView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+      horizontalBarLeftAnchorConstraints = horizontalBarView.leftAnchor.constraint(equalTo: self.leftAnchor)
+      horizontalBarLeftAnchorConstraints?.isActive = true
       horizontalBarView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
       horizontalBarView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1/4).isActive = true
       horizontalBarView.heightAnchor.constraint(equalToConstant: 4).isActive = true
       
+      
+   }
+   // 컬렉션 뷰 선택 시 컬렉션 뷰의 가로바를 이동
+   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//      let x = CGFloat(indexPath.item) * frame.width / 4
+//      horizontalBarLeftAnchorConstraints?.constant = x
+//
+//      UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+//         self.layoutIfNeeded()
+//      }, completion: nil)
+//
+      homeController?.scrollToMenuIndex(menuIndex: indexPath.item)
    }
    
    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
